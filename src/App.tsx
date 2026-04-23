@@ -1,11 +1,18 @@
 import { useState } from "react";
 
 import "./App.css";
+import Nav from "./components/Nav";
+import Sidebar from "./components/Sidebar";
+import Main from "./components/Main";
 
 function App() {
   return (
     <>
-      <h1>Hello World!1</h1>
+      <Nav />
+      <div className="flex flex-1 ">
+        <Sidebar />
+        <Main />
+      </div>
     </>
   );
 }

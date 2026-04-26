@@ -1,6 +1,7 @@
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { format } from "date-fns";
+import { TabsContent } from "./ui/tabs";
 
 function Main() {
   return (
@@ -11,15 +12,22 @@ function Main() {
           {format(new Date(), "EEEE, MMMM yyyy")}
         </time>
       </div>
-      <section className=" bg-white p-4 rounded-lg shadow-md w-full">
-        Main
-      </section>
-      <section className=" bg-white p-4 rounded-lg shadow-md w-full">
-        Focus
-      </section>{" "}
-      <section className=" bg-white p-4 rounded-lg shadow-md w-full">
-        Archived
-      </section>
+      {/* Today section */}
+      <TabsContent value="Today">
+        <section className=" bg-white p-4 rounded-lg shadow-md w-full">
+          Main
+        </section>
+      </TabsContent>
+      <TabsContent value="Focus">
+        <section className=" bg-white p-4 rounded-lg shadow-md w-full">
+          Focus
+        </section>
+      </TabsContent>{" "}
+      <TabsContent value="Archived">
+        <section className=" bg-white p-4 rounded-lg shadow-md w-full">
+          Archived
+        </section>
+      </TabsContent>
     </div>
   );
 }
